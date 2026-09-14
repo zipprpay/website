@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Get notified when Zippr goes live</title>
+  <meta name="description" content="Sign up to be notified when Zippr, the global agentic payout platform, goes live." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="index.html" aria-label="Zippr home">
+          <img class="brand-logo" src="assets/img/zippr-logo.png" alt="Zippr" width="112" height="44" />
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="developers.html">Developers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-cta"><a class="btn btn--primary" href="contact.html">Get notified</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <span class="badge"><span class="pulse"></span> Not live yet</span>
+            <h1 style="margin-top:18px">Be the first to know when Zippr goes live</h1>
+            <p class="lead">
+              We're putting the finishing touches on the global agentic payout platform.
+              Leave your details and we'll email you the moment AI agents can start paying
+              people through Zippr.
+            </p>
+            <ul class="contact-points">
+              <li>
+                <span class="ico">🚀</span>
+                <div><strong>Launch alert</strong><br /><span class="text-muted">One email when Zippr opens up — no drip campaign.</span></div>
+              </li>
+              <li>
+                <span class="ico">🔑</span>
+                <div><strong>Early access</strong><br /><span class="text-muted">Builders on the list get first crack at the API and x402 endpoints.</span></div>
+              </li>
+              <li>
+                <span class="ico">🗣️</span>
+                <div><strong>Shape it</strong><br /><span class="text-muted">Tell us your use case and help us prioritize payout methods and regions.</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="form-card">
+            <div class="form-body">
+              <h3 style="font-size:1.35rem">Notify me at launch</h3>
+              <p class="text-muted" style="font-size:0.92rem">Takes about 20 seconds.</p>
+
+              <form id="notify-form" novalidate>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" autocomplete="email" placeholder="ada@company.com" required />
+                  <div class="error-text">Please enter a valid email address.</div>
+                </div>
+
+                <div class="field">
+                  <label class="checkbox-row">
+                    <input type="checkbox" name="consent" value="yes" />
+                    <span>It's OK to email me about the Zippr launch and early access.</span>
+                  </label>
+                  <div class="error-text">Please check this box so we can contact you.</div>
+                </div>
+
+                <button type="submit" class="btn btn--primary btn--block">Notify me</button>
+                <p class="form-note">We'll only use your details to contact you about Zippr. No spam, unsubscribe anytime.</p>
+              </form>
+            </div>
+
+            <div class="form-success" role="status">
+              <div class="check">✓</div>
+              <h3>You're on the list</h3>
+              <p class="text-muted">Thanks — we'll be in touch the moment Zippr goes live.</p>
+              <a class="btn btn--ghost" href="index.html" style="margin-top:8px">Back to home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year">2026</span> Zippr. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

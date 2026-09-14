@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Developers — Initiate payouts with x402 or the API | Zippr</title>
+  <meta name="description" content="Trigger a Zippr payout with a single x402 payment request or a REST API call. Pass a customer ID and an amount — Zippr handles the rest." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="index.html" aria-label="Zippr home">
+          <img class="brand-logo" src="assets/img/zippr-logo.png" alt="Zippr" width="112" height="44" />
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="developers.html">Developers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-cta"><a class="btn btn--primary" href="contact.html">Get notified</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow">Developers</span>
+            <h1>Initiate a payout with <span class="grad">one request</span></h1>
+            <p class="lead">
+              Kick off a payout the way that fits your stack: an <strong>x402</strong> payment
+              request straight from your agent, or a plain <strong>REST API</strong> call from
+              your backend. Either way, you send a customer ID and an amount — Zippr does the rest.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn--primary" href="contact.html">Request early API access</a>
+              <a class="btn btn--ghost" href="#compare">Compare x402 vs. API</a>
+            </div>
+          </div>
+
+          <div class="code-shell">
+            <div class="code-wrap">
+              <div class="code-tabs" role="tablist" aria-label="Payout request examples">
+                <button class="code-tab is-active" data-target="panel-x402" role="tab" aria-selected="true">x402 request</button>
+                <button class="code-tab" data-target="panel-curl" role="tab" aria-selected="false">cURL</button>
+                <button class="code-tab" data-target="panel-node" role="tab" aria-selected="false">Node</button>
+              </div>
+
+              <div class="code-panel" id="panel-x402">
+                <pre class="code-body"><code><span class="tok-com"># x402 POST — pay a human from an agent</span>
+<span class="tok-fn">POST</span> https://api.zippr.io/x402/payouts
+
+<span class="tok-key">X-Payment-Protocol</span><span class="tok-punc">:</span> x402
+<span class="tok-key">Authorization</span><span class="tok-punc">:</span> Bearer <span class="tok-str">sk_live_...</span>
+<span class="tok-key">Content-Type</span><span class="tok-punc">:</span> application/json
+
+{
+  <span class="tok-key">"customerId"</span><span class="tok-punc">:</span> <span class="tok-str">"cus_8fk20a9"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"amount"</span><span class="tok-punc">:</span> <span class="tok-num">125.00</span>
+}</code></pre>
+              </div>
+
+              <div class="code-panel" id="panel-curl" hidden>
+                <pre class="code-body"><code><span class="tok-fn">curl</span> -X POST https://api.zippr.io/x402/payouts \
+  -H <span class="tok-str">"X-Payment-Protocol: x402"</span> \
+  -H <span class="tok-str">"Authorization: Bearer sk_live_..."</span> \
+  -H <span class="tok-str">"Content-Type: application/json"</span> \
+  -d <span class="tok-str">'{ "customerId": "cus_8fk20a9", "amount": 125.00 }'</span></code></pre>
+              </div>
+
+              <div class="code-panel" id="panel-node" hidden>
+                <pre class="code-body"><code><span class="tok-key">const</span> res = <span class="tok-key">await</span> <span class="tok-fn">fetch</span>(<span class="tok-str">"https://api.zippr.io/x402/payouts"</span>, {
+  <span class="tok-key">method</span><span class="tok-punc">:</span> <span class="tok-str">"POST"</span><span class="tok-punc">,</span>
+  <span class="tok-key">headers</span><span class="tok-punc">:</span> {
+    <span class="tok-str">"X-Payment-Protocol"</span><span class="tok-punc">:</span> <span class="tok-str">"x402"</span><span class="tok-punc">,</span>
+    <span class="tok-str">"Authorization"</span><span class="tok-punc">:</span> <span class="tok-str">`Bearer ${process.env.ZIPPR_KEY}`</span><span class="tok-punc">,</span>
+    <span class="tok-str">"Content-Type"</span><span class="tok-punc">:</span> <span class="tok-str">"application/json"</span>
+  }<span class="tok-punc">,</span>
+  <span class="tok-key">body</span><span class="tok-punc">:</span> <span class="tok-fn">JSON</span>.<span class="tok-fn">stringify</span>({
+    <span class="tok-key">customerId</span><span class="tok-punc">:</span> <span class="tok-str">"cus_8fk20a9"</span><span class="tok-punc">,</span>
+    <span class="tok-key">amount</span><span class="tok-punc">:</span> <span class="tok-num">125.00</span>
+  })
+})<span class="tok-punc">;</span></code></pre>
+              </div>
+            </div>
+            <button class="copy-btn" type="button">Copy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The two parameters -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The request</span>
+          <h2>Two parameters. That's the whole payload.</h2>
+          <p class="text-muted">
+            You don't tell Zippr <em>how</em> to pay someone — the recipient already decided that.
+            You only say <em>who</em> and <em>how much</em>.
+          </p>
+        </div>
+        <div class="grid grid--2">
+          <article class="card">
+            <div class="ico">🆔</div>
+            <h3><code>customerId</code></h3>
+            <p>The Zippr identifier for the person you're paying. It's tied to their verified identity and their chosen payout method.</p>
+          </article>
+          <article class="card">
+            <div class="ico">💵</div>
+            <h3><code>amount</code></h3>
+            <p>How much to send, in your account's settlement currency. Zippr converts to the recipient's currency at payout time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- x402 vs API -->
+    <section class="section" id="compare">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">Two ways in</span>
+          <h2>x402 or REST — pick what fits</h2>
+        </div>
+        <div class="grid grid--2">
+          <article class="card">
+            <div class="ico">⚡</div>
+            <h3>x402 payment request</h3>
+            <p>
+              x402 turns an HTTP request into a payment instruction. Your agent hits the
+              endpoint, the payment is authorized inline, and the payout settles — no separate
+              billing flow, no invoices. Ideal for autonomous, pay-as-you-go agent workflows.
+            </p>
+            <ul class="feature-list" style="margin-top:16px">
+              <li>Payment travels with the request</li>
+              <li>Great for machine-to-human settlement</li>
+              <li>Same <code>customerId</code> + <code>amount</code> payload</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="ico">🔌</div>
+            <h3>REST API call</h3>
+            <p>
+              A conventional authenticated <code>POST</code> from your backend. Use it when a
+              human or a service — not the agent itself — is the one triggering the payout, or
+              when you want to batch and reconcile on your side.
+            </p>
+            <ul class="feature-list" style="margin-top:16px">
+              <li>Bearer-token auth</li>
+              <li>Webhooks for status updates</li>
+              <li>Idempotency keys for safe retries</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flow -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">What happens next</span>
+          <h2>After you send the request</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <h3>Zippr validates</h3>
+            <p>The customer ID is checked, the amount is authorized, and the request is acknowledged synchronously. The funds are retrieved.</p>
+          </div>
+          <div class="step">
+            <h3>Funds held in non-custodial escrow</h3>
+            <p>The amount is locked in a non-custodial escrow until the recipient claims the funds. Zippr never takes custody of funds.</p>
+          </div>
+          <div class="step">
+            <h3>You get a voucher code</h3>
+            <p>Zippr generates a voucher code and unique redeem link. Send the voucher code and/or link to the recipient. The recipient can now claim the funds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Want to build on Zippr?</h2>
+          <p class="text-muted" style="max-width:44ch;margin:0 auto 22px">
+            The API and x402 endpoints are in private development. Get on the list for early access and docs.
+          </p>
+          <a class="btn btn--primary" href="contact.html">Request early access</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year">2026</span> Zippr. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

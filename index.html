@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zippr — The global agentic payout platform</title>
+  <meta name="description" content="Zippr is a global agentic payout platform that lets AI agents pay humans. Recipients choose the payout method that works best for them." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="index.html" aria-label="Zippr home">
+          <img class="brand-logo" src="assets/img/zippr-logo.png" alt="Zippr" width="112" height="44" />
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="developers.html">Developers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-cta"><a class="btn btn--primary" href="contact.html">Get notified</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="badge"><span class="pulse"></span> Coming soon</span>
+            <h1 style="margin-top:18px">
+              The global agentic payout platform that lets
+              <span class="grad">AI agents pay humans</span>
+            </h1>
+            <p class="lead">
+              Zippr gives autonomous agents a single way to send money to people anywhere in the world.
+              Recipients choose between multiple payout methods, so everyone gets paid the way that
+              works best for them.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn--primary" href="contact.html">Get notified at launch</a>
+              <a class="btn btn--ghost" href="developers.html">See how it works</a>
+            </div>
+            <div class="hero-meta">
+              <div><strong>190+</strong> countries reachable</div>
+              <div><strong>6</strong> payout method types</div>
+              <div><strong>1</strong> request to send a payout</div>
+            </div>
+          </div>
+
+          <div class="code-wrap" aria-hidden="true">
+            <div class="code-tabs">
+              <span class="code-tab is-active">payout.agent.ts</span>
+            </div>
+            <pre class="code-body"><code><span class="tok-com">// An agent settles up with a human</span>
+<span class="tok-key">await</span> zippr.<span class="tok-fn">payouts</span>.<span class="tok-fn">create</span>({
+  <span class="tok-key">customerId</span><span class="tok-punc">:</span> <span class="tok-str">"cus_8fk20a9"</span><span class="tok-punc">,</span>
+  <span class="tok-key">amount</span><span class="tok-punc">:</span> <span class="tok-num">125.00</span><span class="tok-punc">,</span>
+  <span class="tok-key">currency</span><span class="tok-punc">:</span> <span class="tok-str">"USD"</span>
+})<span class="tok-punc">;</span>
+
+<span class="tok-com">// The recipient picks how they get paid</span>
+<span class="tok-com">// → bank, stablecoin, wallet, card, gift card…</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Zippr -->
+    <section class="section" id="what">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">What is Zippr</span>
+          <h2>Payouts built for a world where software makes the decisions</h2>
+          <p class="text-muted">
+            AI agents can now research, negotiate, and transact on their own — but paying a
+            real person is still slow, regional, and manual. Zippr is the payout layer that
+            closes that gap.
+          </p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="ico">🤖</div>
+            <h3>Agent-native</h3>
+            <p>A clean API and x402 support mean an agent can trigger a payout the moment a task is done — no dashboards, no human in the loop.</p>
+          </article>
+          <article class="card">
+            <div class="ico">🌍</div>
+            <h3>Truly global</h3>
+            <p>Send value to recipients in 190+ countries. Zippr handles the rails, compliance, and currency conversion behind the scenes.</p>
+          </article>
+          <article class="card">
+            <div class="ico">🎛️</div>
+            <h3>Recipient choice</h3>
+            <p>The person being paid decides how they receive funds. Zippr routes each payout to their preferred method automatically.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payout methods -->
+    <section class="section section--tight" id="methods">
+      <div class="container">
+        <div class="split">
+          <div>
+            <span class="eyebrow">Recipient choice</span>
+            <h2>One payout, many ways to receive it</h2>
+            <p class="text-muted">
+              Every recipient has a preference — a bank account at home, a stablecoin wallet,
+              a card they use daily. Zippr lets them choose once, and every future payout
+              lands where they want it.
+            </p>
+            <ul class="feature-list">
+              <li>Recipients set and update their own preferred method</li>
+              <li>Automatic routing and FX to the destination currency</li>
+              <li>Fallback methods if the primary one is unavailable</li>
+            </ul>
+          </div>
+          <div class="methods">
+            <div class="method"><span><strong>Bank Transfer</strong><span>Send funds to your bank account</span></span></div>
+            <div class="method"><span><strong>Crypto</strong><span>Send funds to a crypto wallet</span></span></div>
+            <div class="method"><span><strong>Digital wallets</strong><span>PayPal or other popular wallets</span></span></div>
+            <div class="method"><span><strong>Prepaid Card</strong><span>Virtual or physical Visa/Mastercard</span></span></div>
+            <div class="method"><span><strong>Gift Card</strong><span>Virtual or physical gift card for 100+ retailers</span></span></div>
+            <div class="method"><span><strong>Cash Pickup</strong><span>Pick up cash at one of thousands of locations</span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">How it works</span>
+          <h2>From agent decision to money received</h2>
+        </div>
+        <img class="flow-diagram" src="assets/img/flow-4-steps.png" alt="Flow diagram: 1. x402 / API pay-in — senders pay via x402 or API. 2. Zippr Pay — secure, non-custodial, trustless payments. 3. Recipient claim — recipient receives a claim and chooses how to get paid. 4. Payout options — recipients choose their preferred method: bank transfer, crypto, prepaid Visa, retail gift card, cash pickup, or digital wallet." />
+        <div class="steps steps--4">
+          <div class="step">
+            <h3>Agent initiates</h3>
+            <p>Your agent calls Zippr with a customer ID and an amount — over the REST API or an x402 payment request.</p>
+          </div>
+          <div class="step">
+            <h3>Funds held in non-custodial escrow</h3>
+            <p>The amount is locked in a non-custodial escrow until the recipient claims the funds. Zippr never takes custody of funds.</p>
+          </div>
+          <div class="step">
+            <h3>Human gets paid</h3>
+            <p>Zippr generates a voucher code and unique redeem link. Send the voucher code and/or link to the recipient.</p>
+          </div>
+          <div class="step">
+            <h3>Flexible payout</h3>
+            <p>The recipient receives payout funds in the most convenient way - bank transfer, crypto, digital wallet, prepaid card, gift card or cash pickup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Zippr isn't live yet — but it's close</h2>
+          <p class="text-muted" style="max-width:46ch;margin:0 auto 22px">
+            Join the list and we'll let you know the moment agents can start paying people through Zippr.
+          </p>
+          <a class="btn btn--primary" href="contact.html">Sign up for launch updates</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year">2026</span> Zippr. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
